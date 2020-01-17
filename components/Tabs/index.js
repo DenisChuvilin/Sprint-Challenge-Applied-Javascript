@@ -9,13 +9,18 @@
 //    <div class="tab">topic here</div>
 
 axios.get('https://lambda-times-backend.herokuapp.com/topics').then(function(response) {
-  console.log(response);
+  //   console.log(response);
 
-  document.querySelector('.topics').append(
-    response.data.topics.array.forEach(element => {
-      element;
-    })
-  );
+  document.querySelector('.topics').append(topicsCreator(response.data.topics));
 });
 
-// document.querySelector('.tabs').append(topicsCreator());
+function topicsCreator(item) {
+  //create element
+  const topic = document.createElement('div');
+  //create class
+  topic.classList.add('tab');
+  //add text content
+  topic.textContent = item;
+
+  return topic;
+}
