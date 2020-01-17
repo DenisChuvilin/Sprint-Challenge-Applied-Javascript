@@ -2,17 +2,15 @@
 // -----------------------
 // Send an HTTP GET request to the following address: https://lambda-times-backend.herokuapp.com/articles
 // Stduy the response data you get back, closely.
+
 const cards = document.querySelector('.cards-container');
+// cards.append(CardMaker());
 
 axios.get('https://lambda-times-backend.herokuapp.com/articles').then(function(response) {
-  console.log(response);
-
-  // cards.append(CardMaker(response.data.articles))
-  for (let i = 0; i < response.data.articles.length; i++) {
-    response.data.articles[i].forEach(element => {
-      return cards.append(CardMaker(element));
-    });
-  }
+  Object.values(response.data.articles).forEach(topic => {
+    console.log(topic);
+    topic.forEach(element => cards.append(CardMaker(element)));
+  });
 });
 
 // You will be creating a component for each 'article' in the list.
@@ -46,9 +44,18 @@ function CardMaker(api) {
   author.classList.add('author');
   imgContainer.classList.add('img-container');
 
-  // add text Content
-  headline.textContent = api.img.src = api.authorPhoto;
-  // src
+  // appendings
+  card.append(headline);
+  card.append(author);
+  author.append(imgContainer);
+  author.append(authName);
+  imgContainer.append(img);
 
-  //
+  // add text content
+  headline.textContent = api.headline;
+  authName.textContent = api.authorName;
+  // add photo
+  img.src = api.authorPhoto;
+
+  return card;
 }

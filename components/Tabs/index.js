@@ -9,9 +9,7 @@
 //    <div class="tab">topic here</div>
 
 axios.get('https://lambda-times-backend.herokuapp.com/topics').then(function(response) {
-  //   console.log(response);
-
-  document.querySelector('.topics').append(topicsCreator(response.data.topics));
+  response.data.topics.forEach(e => document.querySelector('.topics').append(topicsCreator(e)));
 });
 
 function topicsCreator(item) {
@@ -20,7 +18,7 @@ function topicsCreator(item) {
   //create class
   topic.classList.add('tab');
   //add text content
-  topic.textContent = item;
+  topic.textContent = `${item} `;
 
   return topic;
 }
