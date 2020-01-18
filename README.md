@@ -34,11 +34,11 @@ the Dom is the document object model, its a representation of the html that we c
 
 2. What is an event?
 
-An event is....
+An event is anything from basic user interactions to automated notifications of things happening in the rendering model.
 
 3. What is an event listener?
 
-An event listener is...
+An event listener is an object that can handle an event dispatched by an event.
 
 4. Why would we convert a NodeList into an Array?
 
@@ -46,7 +46,7 @@ NodeList has only some properties of an array(like forEach and .length), but not
 
 5. What is a component?
 
-A component is a...
+A component is a reusable piece of code that represents a block of information that can be used in the DOM
 
 ### Git Set up
 
