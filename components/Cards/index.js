@@ -32,12 +32,12 @@ Steps
 
 function cardCreator(api) {
   //create elements
-  const card = document.createElement('div');
-  headline = document.createElement('div');
-  author = document.createElement('div');
-  imgContainer = document.createElement('div');
-  img = document.createElement('img');
-  name = document.createElement('span');
+  const card = document.createElement('div'),
+    headline = document.createElement('div'),
+    author = document.createElement('div'),
+    imgContainer = document.createElement('div'),
+    img = document.createElement('img'),
+    name = document.createElement('span');
   // add classes
   card.classList.add('card');
   headline.classList.add('headline');
@@ -46,8 +46,8 @@ function cardCreator(api) {
   // api injections
   headline.textContent = api.headline;
   img.src = api.authorPhoto;
-  name.textContent = api.authorName;
-  console.log(name.textContent);
+  name.textContent = 'By ' + api.authorName;
+  console.log(api.authorName);
   // appendings
   imgContainer.append(img);
   author.append(imgContainer, name);
@@ -61,12 +61,10 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles').then(response =
   // prework
   const cardValues = Object.values(response.data.articles);
   //algorythm
-  cardValues.map(element => {
-    element.map(article => 
-        cardContainer.append(cardCreator(article)))
-})
-//console.log
-cardValues.forEach(element => {
-    element.map(article => console.log(article.authorName))})
-
+  cardValues.forEach(collection => {
+    collection.map(article => cardContainer.append(cardCreator(article)));
+  });
+  //console.log
+  // cardValues.forEach(element => {
+  //     element.map(article => console.log(article.authorName))})
 });
