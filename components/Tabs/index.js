@@ -33,7 +33,7 @@ function topicGenerator(apiTopic){
 //3.
 axios.get('https://lambda-times-backend.herokuapp.com/topics').then(response => {
     //prework
-  console.log(response);
+//   console.log(response);
   const topics = response.data.topics
  // algorythm
   topics.map(
