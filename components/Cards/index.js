@@ -45,12 +45,13 @@ function cardCreator(api) {
   imgContainer.classList.add('img-container');
   // api injections
   headline.textContent = api.headline;
-  img.src = 'api.authorPhoto';
-                                                console.log(img.src);
-  author.textContent = api.authorName;
+  img.src = api.authorPhoto;
+  name.textContent = api.authorName;
+  console.log(name.textContent);
   // appendings
-  card.append(headline, author);
+  imgContainer.append(img);
   author.append(imgContainer, name);
+  card.append(headline, author);
   // return parent element
   return card;
 }
@@ -59,14 +60,13 @@ cardContainer = document.querySelector('.cards-container');
 axios.get('https://lambda-times-backend.herokuapp.com/articles').then(response => {
   // prework
   const cardValues = Object.values(response.data.articles);
-  const cardKeys = Object.keys(response.data.articles);
-  console.log(cardKeys, cardValues);
-
-//   cardValues.forEach(element => {
-//       console.log(element)
-//   })
   //algorythm
-  cardValues.forEach(element => {
-    element.map(article => cardContainer.append(cardCreator(article)))
+  cardValues.map(element => {
+    element.map(article => 
+        cardContainer.append(cardCreator(article)))
 })
+//console.log
+cardValues.forEach(element => {
+    element.map(article => console.log(article.authorName))})
+
 });
