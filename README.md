@@ -29,42 +29,43 @@ Demonstrate your understanding of this week's concepts by answering the followin
 Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager
 
 1. What is the DOM?
-    	The DOM (Document Object Model) is a tree-like platform of nodes and language neutral interface that allows programs and scripts to dynamically access and update the content, structure, and style of a document. 
+   The DOM (Document Object Model) is a tree-like platform of nodes and language neutral interface that allows programs and scripts to dynamically access and update the content, structure, and style of a document.
 2. What is an event?
-         an event is a ‘thing’ that happens to the html element.
+   an event is a ‘thing’ that happens to the html element. Ic can be something the browser does or something that the user does. JS can 'react' to these events being turned on.
 3. What is an event listener?
-
+   An event listener is a procedure or function in a program that waits for an event to occur.
 4. Why would we convert a NodeList into an Array?
-
+   So we could use methods that an array has and a nodelist does not have. NodeList can do .length and forEach, but nothing more.
 5. What is a component?
+   A component is a piece of reusable code that is part of a web page.
 
 ### Git Set up
 
-* [ ] Fork the project into your GitHub user account
-* [ ] Clone the forked project into a directory on your machine
-* [ ] Create a pull request before you start working on the project requirements.  You will continuously push your updates throughout the project.
-* [ ] You are now ready to build this project with your preferred IDE
+- [ ] Fork the project into your GitHub user account
+- [ ] Clone the forked project into a directory on your machine
+- [ ] Create a pull request before you start working on the project requirements. You will continuously push your updates throughout the project.
+- [ ] You are now ready to build this project with your preferred IDE
 
 ## Minimum Viable Product
 
 Your finished project must include all of the following requirements:
 
-* [X] Look through the HTML code and familiarize yourself with the different sections. Some of them already exist, but some need to be filled in. DO NOT add any code to the HTML file itself.
+- [x] Look through the HTML code and familiarize yourself with the different sections. Some of them already exist, but some need to be filled in. DO NOT add any code to the HTML file itself.
 
-* [X] Following the instructions in the `Header/index.js` file, create the Header component. 
+- [x] Following the instructions in the `Header/index.js` file, create the Header component.
 
-* [X] Following the instructions in the `Tabs/index.js` file, create individual Tabs components.
+- [x] Following the instructions in the `Tabs/index.js` file, create individual Tabs components.
 
-* [X] Following the instructions in the `Cards/index.js` file, create individual Cards components.
+- [x] Following the instructions in the `Cards/index.js` file, create individual Cards components.
 
 ## Stretch Problems
 
 Your stretch challenge is to write the functionality of a `Carousel` component. This is an advanced challenge, so you are not expected to be able to complete it. If you begin and don't finish, you should still submit with what you have. This is going to be a bit different because you are going to need to create some advanced functionality for the carousel. There is no need to request data for this exercise.
 
-* [ ] Complete the carousel functionality in `Carousel.js`
+- [ ] Complete the carousel functionality in `Carousel.js`
 
-* [ ] If you complete the Carousel, add functionality so that the carousel slides when the buttons are pressed instead of just appearing.
+- [ ] If you complete the Carousel, add functionality so that the carousel slides when the buttons are pressed instead of just appearing.
 
-* [ ] Create an 'infinite loop' carousel. In which as long as you click on an arrow, the array of images will loop over itself.
+- [ ] Create an 'infinite loop' carousel. In which as long as you click on an arrow, the array of images will loop over itself.
 
-* [ ] If you have finished the above, research `data attributes`. Implement data attributes within your tabs as well as your cards. Give the tabs functionality so that when they are clicked they filter the cards to only display the cards that contain that topic.
+- [ ] If you have finished the above, research `data attributes`. Implement data attributes within your tabs as well as your cards. Give the tabs functionality so that when they are clicked they filter the cards to only display the cards that contain that topic.
