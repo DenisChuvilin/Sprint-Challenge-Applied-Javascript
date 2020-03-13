@@ -30,6 +30,5 @@ function topicCreator(api){
 
 axios.get('https://lambda-times-backend.herokuapp.com/topics')
 .then(r => {for (topic of r.data.topics){
-    console.log(topic)
 topics.append(topicCreator(topic))
 }})
