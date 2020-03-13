@@ -56,9 +56,11 @@ const cardsContainer = document.querySelector('.cards-container');
 
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
 .then(response => {
-    const articles = Object.values(response.data.articles)
-    console.log(response.data.articles)
-    articles.forEach(topic => {
-        topic.forEach(article => cardsContainer.append(CardCreator(article)))
+    // go into topics
+    const topics = Object.values(response.data.articles)
+  // go into collection of articles for each topic
+    topics.forEach(collection => {
+     // target and attach each article to the DOM cia CardCreator
+        collection.forEach(article => cardsContainer.append(CardCreator(article)))
     })
 })
